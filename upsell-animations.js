@@ -209,3 +209,34 @@ document.head.appendChild(kiwifyStyles);
 
 // Remove somente o link visual legado; a recusa oficial da Kiwify permanece intacta.
 document.querySelectorAll('#decline-upsell').forEach((element) => element.remove());
+
+// O CTA da hero só desloca a página após clique manual; não usa hash na URL.
+const finalOffer = document.querySelector('.compact-final');
+if (finalOffer) finalOffer.id = 'oferta';
+
+const heroCtaLink = document.querySelector('#upsell-button-container .cta');
+if (heroCtaLink) {
+  const heroScrollButton = document.createElement('button');
+  heroScrollButton.type = 'button';
+  heroScrollButton.id = 'hero-scroll-cta';
+  heroScrollButton.className = heroCtaLink.className;
+  heroScrollButton.innerHTML = heroCtaLink.innerHTML;
+  heroCtaLink.replaceWith(heroScrollButton);
+  heroScrollButton.addEventListener('click', () => {
+    const offer = document.getElementById('oferta');
+    if (offer) offer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+}
+
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+if (window.location.hash === '#oferta') {
+  history.replaceState(null, '', window.location.pathname + window.location.search);
+}
+window.scrollTo(0, 0);
+window.addEventListener('pageshow', () => {
+  window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+});
+
+const heroScrollStyles = document.createElement('style');
+heroScrollStyles.textContent = '#hero-scroll-cta{border:0;cursor:pointer;font-family:Inter,Arial,sans-serif}';
+document.head.appendChild(heroScrollStyles);
