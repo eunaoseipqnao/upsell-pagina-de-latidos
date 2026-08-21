@@ -1,0 +1,93 @@
+/* Downsell: extensão compacta da identidade visual do upsell. */
+:root { --orange:#ed8426; --orange-dark:#bd6114; --blue:#215d73; --blue-dark:#193b4b; --cream:#fff7ed; --muted:#58616a; --gold:#ffd287; }
+body { font-family:Inter,Arial,sans-serif; color:#192d3a; background:#fff; }
+h1,h2 { font-family:Inter,Arial,sans-serif; font-weight:800; letter-spacing:-.045em; line-height:1.1; }
+.section { padding:68px 24px; }
+.wrap { max-width:1152px; margin-inline:auto; }
+.narrow { max-width:760px; }
+.center { text-align:center; }
+.eyebrow,.section-label { display:inline-flex; align-items:center; gap:8px; margin:0 0 15px; color:var(--blue); font-size:.73rem; font-weight:800; letter-spacing:.11em; text-transform:uppercase; }
+.eyebrow span { width:8px; height:8px; border-radius:999px; background:var(--orange); }
+h1 { max-width:740px; margin:0 auto 18px; font-size:clamp(2.15rem,4.4vw,3.75rem); }
+h2 { margin:0 auto 17px; font-size:clamp(1.8rem,3.3vw,2.7rem); }
+p { margin-top:0; }
+.lead { max-width:665px; margin:0 auto; color:#334956; font-size:clamp(1.04rem,2vw,1.22rem); line-height:1.55; }
+.hero-description { max-width:640px; margin:13px auto 0; color:var(--muted); font-size:.96rem; line-height:1.6; }
+.downsell-hero { padding-top:35px; background:linear-gradient(180deg,var(--cream) 0%,#fff 83%); }
+.price { margin:22px auto 0; }
+.price span,.price small { display:block; }
+.price span { color:var(--muted); font-size:.96rem; font-weight:700; }
+.price s { text-decoration-color:#e34b43; text-decoration-thickness:2px; }
+.price strong { display:block; color:var(--blue); font-size:clamp(3.3rem,7vw,5rem); font-weight:800; line-height:1.05; letter-spacing:-.065em; }
+.price small { margin-top:2px; color:var(--muted); font-size:.82rem; font-weight:700; }
+.price-note { margin:10px auto 0; color:var(--blue); font-size:.92rem; font-weight:700; }
+.downsell-button-container { width:min(100%,580px); margin:20px auto 0; }
+.cta { display:flex; align-items:center; justify-content:center; gap:11px; min-height:57px; border-radius:12px; background:var(--orange); color:#fff; box-shadow:0 5px 0 var(--orange-dark),0 12px 24px #ed84263d; font-size:.98rem; font-weight:800; letter-spacing:.01em; text-decoration:none; transition:.2s; }
+.cta:hover { background:#d97018; transform:translateY(1px); box-shadow:0 3px 0 #ad5713,0 9px 19px #ed84263d; }
+.cta b { font-size:1.22rem; }
+.downsell-button-container small { display:block; margin-top:10px; color:var(--muted); font-size:.83rem; font-weight:600; }
+.trust { display:flex; justify-content:center; flex-wrap:wrap; gap:7px 12px; margin:15px auto 24px; color:var(--muted); font-size:.76rem; font-weight:600; }
+.trust span { color:#1c9463; font-weight:800; }
+.downsell-art { width:min(100%,340px); margin:0 auto; padding:8px; border-radius:20px; background:#fff; box-shadow:0 18px 40px #173e5320; }
+.downsell-art img { display:block; width:100%; border-radius:13px; }
+.downsell-carousel { position:relative; overflow:hidden; }
+.carousel-stage { position:relative; aspect-ratio:5 / 7; overflow:hidden; border-radius:13px; background:#fff; }
+.downsell-carousel .carousel-slide { position:absolute; inset:0; width:100%; height:100%; margin:0; object-fit:cover; opacity:0; transform:scale(1.02); transition:opacity .38s ease,transform .5s ease; }
+.downsell-carousel .carousel-slide.is-active { opacity:1; transform:scale(1); }
+.carousel-arrow { position:absolute; top:50%; z-index:2; width:34px; height:34px; padding:0; border:0; border-radius:50%; background:var(--blue); color:#fff; box-shadow:0 4px 12px #173e5340; cursor:pointer; font-size:26px; line-height:28px; transform:translateY(-50%); }
+.carousel-prev { left:15px; }
+.carousel-next { right:15px; }
+.carousel-dots { position:absolute; z-index:2; bottom:40px; left:50%; display:flex; gap:6px; transform:translateX(-50%); }
+.carousel-dot { width:7px; height:7px; padding:0; border:0; border-radius:50%; background:#fff9; cursor:pointer; }
+.carousel-dot.is-active { width:20px; border-radius:99px; background:var(--orange); }
+.image-seal { position:absolute; bottom:13px; left:50%; z-index:2; padding:7px 11px; border-radius:999px; background:#fff; color:var(--blue); box-shadow:0 8px 20px #173e5320; font-size:.69rem; font-weight:800; white-space:nowrap; transform:translateX(-50%); }
+.same-training { padding-block:58px; background:#fff; }
+.training-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:28px; text-align:left; }
+.training-grid article { min-height:135px; padding:20px 17px; border:1px solid #e4e8e9; border-radius:14px; background:#fff; box-shadow:0 4px 13px #173e530a; }
+.training-grid strong { display:block; color:var(--blue); font-size:1.05rem; }
+.training-grid p { margin:8px 0 0; color:var(--muted); font-size:.87rem; line-height:1.5; }
+.price-objection { padding-block:58px; background:var(--cream); }
+.price-objection > .wrap > p:not(.section-label):not(.emphasis) { max-width:670px; margin:0 auto; color:var(--muted); line-height:1.7; }
+.emphasis { margin:20px auto 0; color:var(--blue); font-size:1.05rem; font-weight:800; }
+.previous-purchase { max-width:690px; margin:26px auto 0; padding:20px 23px; border:1px solid #c5dce4; border-radius:14px; background:#f4fafb; }
+.previous-purchase p { margin:0; color:#3d5967; font-size:.91rem; line-height:1.6; }
+.previous-purchase strong { display:block; margin-top:9px; color:var(--blue); }
+.downsell-final { padding-block:68px; background:var(--blue-dark); color:#fff; }
+.downsell-final .section-label { color:var(--gold); }
+.downsell-final h2 { color:#fff; }
+.downsell-final > .wrap > p:not(.section-label):not(.final-summary) { margin:0 auto; color:#edf5f6; line-height:1.65; }
+.downsell-final .price { margin-top:20px; }
+.downsell-final .price span { color:#d5e0e4; }
+.downsell-final .price strong { color:var(--gold); text-shadow:0 2px 14px #0004; }
+.final-summary { margin:14px auto 0; color:#edf5f6; font-size:.83rem; font-weight:700; line-height:1.8; }
+.final-summary span { margin:0 5px; color:var(--gold); }
+.downsell-final .downsell-button-container small { color:#d5e0e4; }
+.decline { display:inline-block; margin-top:27px; color:#192d3a; font-size:.82rem; text-decoration:underline; }
+.decline:hover { color:var(--blue); }
+@media (max-width:720px) {
+  .section { padding:48px 20px; }
+  .downsell-hero { padding-top:28px; }
+  h1 { font-size:clamp(2rem,9vw,2.45rem); }
+  .hero-description { font-size:.91rem; }
+  .price strong { font-size:4rem; }
+  .cta { padding:15px 12px; font-size:.82rem; line-height:1.3; }
+  .trust { max-width:330px; gap:5px 9px; font-size:.7rem; }
+  .downsell-art { width:min(100%,300px); }
+  .carousel-arrow { width:32px; height:32px; }
+  .carousel-dots { bottom:39px; }
+  .same-training,.price-objection { padding-block:45px; }
+  .training-grid { grid-template-columns:1fr 1fr; gap:9px; margin-top:23px; }
+  .training-grid article { min-height:124px; padding:16px 13px; border-radius:11px; }
+  .training-grid strong { font-size:.91rem; }
+  .training-grid p { font-size:.77rem; }
+  .previous-purchase { padding:18px 16px; }
+  .downsell-final { padding-block:52px; }
+  .final-summary span { margin:0 2px; }
+}
+@media (max-width:380px) {
+  .section { padding-inline:16px; }
+  h1 { font-size:1.94rem; }
+  .price strong { font-size:3.7rem; }
+  .cta { font-size:.76rem; }
+  .training-grid article { padding:14px 10px; }
+}
